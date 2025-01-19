@@ -72,6 +72,14 @@
 		</dependency>
 	</dependencies>
 
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>OmarAouini</name>
+			<url>https://maven.pkg.github.com/OmarAouini/spring-boot-quick-crud</url>
+		</repository>
+	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
