@@ -1,3 +1,0 @@
-application:
-  name: spring-boot-quick-crud
-  version: ${project.version}

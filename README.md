@@ -14,7 +14,7 @@ these are the main features of the base package:
 - support internationalization, localization, and other language-specific features.
 - provide logging, monitoring, and reporting capabilities to track and analyze application behavior.
 - ensure data integrity, consistency, and reliability by enforcing constraints, validations, and best practices.
-
+- soft delete capability for entities that need to be marked as deleted without actually removing them from the database.
 ## How to use the base package Classes
 
 All the classes leverage generics with type constraints to provide a flexible and reusable solution that can be easily adapted to different entities and use cases,
@@ -23,6 +23,55 @@ the generic types are the following:
 - D: the DTO type (D must be a subclass of BaseDto)
 - I: the primary key type (I must be a subclass of Serializable)
 - R: the repository type (R must be a subclass of BaseRepository)
+
+### First steps
+
+add this dependency to your pom.xml file:
+```xml
+<dependency>
+    <groupId>com.github.omaraouini</groupId>
+    <artifactId>spring-boot-quick-crud</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+</dependency>
+```
+
+In the spring-boot-maven-plugi add this section to allow the lombok plugin to work as expected:
+```xml
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-maven-plugin</artifactId>
+      <configuration>
+        <excludes>
+          <exclude>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+          </exclude>
+        </excludes>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+```
+
+add the @EnableJapAuditing and @ComponentScans annotations to your main class, example:
+```java
+@EnableJpaAuditing
+@ComponentScans({
+        @ComponentScan("com.github.omaraouini.quickcrud.base")
+        //@ComponentScan("your.base.package.path")
+})
+@SpringBootApplication
+public class Application {
+
+  public static void main(String[] args) {
+    SpringApplication.run(Application.class, args);
+  }
+}
+```
+#### ***Note:***
+Dont forget to add the @ComponentScan annotation to your base package path, as shown in the example above in the commented part.
 
 ### BaseEntity
 base entity class used to define the common attributes of all entities that need to be saved in the database,
