@@ -492,6 +492,8 @@ As usual, you can create your custom validation messages by adding them to a res
 11. Validation messages constants class that defines specific validation messages for the entity (optional).
 12. Messages resource bundle file that contains the validation messages for the entity (optional).
 
+Needless to say you can keep different entities in the same package if they are related to each other (eg: Product and ProductCodes), but it is recommended to keep them in separate packages to keep the code clean and organized.
+
 Example of a package structure: <br>
 ![image info](./entity_package_example.png)
 
