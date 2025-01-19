@@ -74,6 +74,7 @@
 
 	<distributionManagement>
 		<repository>
+			<layout>default</layout>
 			<id>github</id>
 			<name>GitHub Packages</name>
 			<url>https://maven.pkg.github.com/OmarAouini/spring-boot-quick-crud</url>
