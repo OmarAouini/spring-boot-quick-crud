@@ -325,13 +325,15 @@ The BaseExceptionHandler class is a generic base class for all exception handler
 in case you need to create a custom exception handler, you can extend this class and add your custom logic.
 
 ```java
-    @ControllerAdvice
-    public class CustomExceptionHandler extends BaseExceptionHandler {
-        @ExceptionHandler(CustomException.class)
-        public ResponseEntity<ErrorResponse> handleCustomException(CustomException ex) {
-            return super.handleException(ex, HttpStatus.BAD_REQUEST);
-        }
-    }
+    import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class CustomExceptionHandler extends BaseExceptionHandler {
+  @ExceptionHandler(CustomException.class)
+  public ResponseEntity<ErrorResponse> handleCustomException(CustomException ex) {
+    return super.handleException(ex, HttpStatus.BAD_REQUEST);
+  }
+}
 ```
 
 ### BaseMapper
