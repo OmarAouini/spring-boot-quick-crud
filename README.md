@@ -140,7 +140,7 @@ example usage:
 
 ```java
   @Entity
-  @Table(name = "products")
+  @Table(name = "products_codes")
   @SQLDelete(sql = "UPDATE products_codes SET deleted = true WHERE id=?")
   @Where(clause = "deleted=false")
   @SuperBuilder
