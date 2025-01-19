@@ -74,10 +74,13 @@
 
 	<distributionManagement>
 		<repository>
-			<id>github</id>
-			<name>OmarAouini</name>
-			<url>https://maven.pkg.github.com/OmarAouini/spring-boot-quick-crud</url>
+			<id>releases</id>
+			<url>https://maven.pkg.github.com/OmarAouini/spring-boot-quick-crud/releases</url>
 		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<url>https://maven.pkg.github.com/OmarAouini/spring-boot-quick-crud/snapshots</url>
+		</snapshotRepository>
 	</distributionManagement>
 
 	<build>
