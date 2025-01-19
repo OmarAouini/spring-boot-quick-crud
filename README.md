@@ -1,6 +1,6 @@
 
-# Spring Boot Quick CRUD Base Package Project Template
-This project is a Spring Boot application that uses Maven for dependency management. It includes a base package that provides foundational classes and utilities to streamline and speed up development and ensure consistency across the application.
+# Spring Boot Quick CRUD Base Package library
+This project is a Spring Boot application library that uses Maven for dependency management. It includes a base package that provides foundational classes and utilities to streamline and speed up development and ensure consistency across the application.
 
 these are the main features of the base package:
 - quick and easy setup of new entities, DTOs, repositories, services, controllers, and mappers with minimal boilerplate code, making new CRUD operations a breeze.
